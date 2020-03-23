@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>{{title}}</h2>
+        <v-header :title="title"/>
         <button @click="getData()">请求数据</button>
         <ul>
             <li v-for="(item,key) in list.data" :key="key">
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+
+    import Header from './common/Header';
+
     export default {
         name: "Home",
         data() {
@@ -28,6 +31,9 @@
                     console.log(err);
                 })
             }
+        },
+        components:{
+            'v-header':Header
         }
     }
 </script>

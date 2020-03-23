@@ -19,8 +19,8 @@
         },
         components: {
             'v-databind': DataBind,
-            'v-home':Home,
-            'v-lifecycle':LifeCycle
+            'v-home': Home,
+            'v-lifecycle': LifeCycle
         }
     }
 </script>
