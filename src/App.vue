@@ -1,58 +1,31 @@
 <template>
-  <div id="app">
-    <h2>{{msg}}</h2>
-    这是一个根组件
-    <br/>
-    绑定对象：{{obj.name}}
-    <br/>
-    <ul>
-      <li v-for="(item,key) in list" :key="item" :class="{'red':key == 0}">
-       {{key}} --- {{item}}
-      </li>
-    </ul>
-    <br/>
-    使用v-bind绑定属性：<div v-bind:title="title">鼠标瞄一下看到title</div>
-    可以使用：简写绑定：<div :title="title">简写的绑定写法</div>
-    <br/>
-    <div v-html="html"></div>
-    <br/>
-    使用v-bind:class绑定样式：
-    <div v-bind:style="{'width':boxwith+'px'}" v-bind:class="{'box':flag}">样式绑定</div>
-  </div>
-
+    <div id="app">
+        <h2>{{msg}}</h2>
+        这是一个根组件
+        <v-databind/>
+        <v-home/>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      obj:{
-        name: '张三'
-      },
-      list:[
-        "1111",
-        "2222",
-        "3333"
-      ],
-      title: "我是一个title",
-      html: "<h2>我是一个html</h2>",
-      flag: true,
-      boxwith:100
+
+    import DataBind from './components/DataBind';
+    import Home from './components/Home';
+
+    export default {
+        name: 'app',
+        data() {
+            return {
+                msg: 'Welcome to Your Vue.js App'
+            }
+        },
+        components: {
+            'v-databind': DataBind,
+            'v-home':Home
+        }
     }
-  }
-}
 </script>
 
 <style>
-  .red{
-    color: red;
-  }
 
-  .box{
-    height: 200px;
-    width: 100px;
-    background-color: red;
-  }
 </style>
