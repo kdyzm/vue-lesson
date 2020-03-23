@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <v-lifecycle/>
+        <v-home/>
     </div>
 </template>
 
