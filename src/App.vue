@@ -1,9 +1,6 @@
 <template>
     <div id="app">
-        <h2>{{msg}}</h2>
-        这是一个根组件
-        <v-databind/>
-        <v-home/>
+        <v-lifecycle/>
     </div>
 </template>
 
@@ -11,6 +8,7 @@
 
     import DataBind from './components/DataBind';
     import Home from './components/Home';
+    import LifeCycle from './components/LifeCycle';
 
     export default {
         name: 'app',
@@ -21,7 +19,8 @@
         },
         components: {
             'v-databind': DataBind,
-            'v-home':Home
+            'v-home':Home,
+            'v-lifecycle':LifeCycle
         }
     }
 </script>
