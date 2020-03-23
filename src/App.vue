@@ -18,6 +18,10 @@
     <br/>
     使用v-bind:class绑定样式：
     <div v-bind:style="{'width':boxwith+'px'}" v-bind:class="{'box':flag}">样式绑定</div>
+    <hr/>
+    <input v-model="inputData"/><button v-on:click="getMsg()">获取数据</button>
+    <hr/>
+    <input ref="inputData1"/><button v-on:click="getMsg1()">获取数据1</button>
   </div>
 
 </template>
@@ -39,7 +43,16 @@ export default {
       title: "我是一个title",
       html: "<h2>我是一个html</h2>",
       flag: true,
-      boxwith:100
+      boxwith:100,
+      inputData: "Hello"
+    }
+  },
+  methods:{
+    getMsg(){
+      alert(this.inputData);
+    },
+    getMsg1(){
+      alert(this.$refs.inputData1.value);
     }
   }
 }
