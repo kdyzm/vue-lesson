@@ -1,7 +1,7 @@
 <template>
     <div>
-        <v-header ref="header" :title="title"/>
-        <button @click="getHeaderData()">获取子组件的数据和方法</button>
+        <v-header ref="header" :title="title"/><br/>
+        <button @click="getHeaderData()">获取子组件的数据和方法</button><br/><br/>
         <button @click="getData()">请求数据</button>
         <ul>
             <li v-for="(item,key) in list.data" :key="key">
