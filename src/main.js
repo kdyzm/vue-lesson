@@ -8,6 +8,7 @@ import VueRouter from 'vue-router'
 //1.定义组件
 import Home from './components/Home';
 import News from './components/News';
+import NewsDetail from './components/NewsDetail';
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
@@ -16,6 +17,8 @@ Vue.use(VueRouter);
 const routes = [
     { path: '/home', component: Home },
     { path: '/news', component: News },
+    { path: '/news/detail/:aid', component: NewsDetail },
+    { path: '/news/detail', component: NewsDetail },
     { path: '*', redirect: '/home' }
 ]
 
