@@ -1,6 +1,8 @@
 <template>
     <div id="app">
         <v-home/>
+        <hr/>
+        <v-news/>
     </div>
 </template>
 
@@ -9,6 +11,7 @@
     import DataBind from './components/DataBind';
     import Home from './components/Home';
     import LifeCycle from './components/LifeCycle';
+    import News from './components/News';
 
     export default {
         name: 'app',
@@ -20,7 +23,8 @@
         components: {
             'v-databind': DataBind,
             'v-home': Home,
-            'v-lifecycle': LifeCycle
+            'v-lifecycle': LifeCycle,
+            'v-news': News
         }
     }
 </script>
