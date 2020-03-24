@@ -1,18 +1,22 @@
 <template>
     <div>
-        <v-header :title="title"/>
+        <v-header ref="header" :title="title"/><br/>
+        <button @click="getHeaderData()">获取子组件的数据和方法</button><br/><br/>
+        <button @click="emitNews()">给News组件传值</button><br/><br/>
         <button @click="getData()">请求数据</button>
         <ul>
             <li v-for="(item,key) in list.data" :key="key">
                 {{item}}
             </li>
         </ul>
+
     </div>
 </template>
 
 <script>
 
     import Header from './common/Header';
+    import VueEvent from './model/VueEvent';
 
     export default {
         name: "Home",
@@ -30,6 +34,12 @@
                 }, (err) => {
                     console.log(err);
                 })
+            },
+            getHeaderData(){
+                this.$refs.header.run();
+            },
+            emitNews(){
+                VueEvent.$emit('to-news',this.title);
             }
         },
         components:{
