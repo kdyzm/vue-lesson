@@ -13,7 +13,9 @@
             }
         },
         methods:{
-
+            run(){
+                alert("我是header组件的方法");
+            }
         },
         props:['title']
     }

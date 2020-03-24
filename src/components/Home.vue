@@ -1,12 +1,14 @@
 <template>
     <div>
-        <v-header :title="title"/>
+        <v-header ref="header" :title="title"/>
+        <button @click="getHeaderData()">获取子组件的数据和方法</button>
         <button @click="getData()">请求数据</button>
         <ul>
             <li v-for="(item,key) in list.data" :key="key">
                 {{item}}
             </li>
         </ul>
+
     </div>
 </template>
 
@@ -30,6 +32,9 @@
                 }, (err) => {
                     console.log(err);
                 })
+            },
+            getHeaderData(){
+                this.$refs.header.run();
             }
         },
         components:{
