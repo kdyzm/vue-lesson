@@ -18,6 +18,7 @@ const routes = [
     { path: '/home', component: Home },
     { path: '/news', component: News },
     { path: '/news/detail/:aid', component: NewsDetail },
+    { path: '/news/detail', component: NewsDetail },
     { path: '*', redirect: '/home' }
 ]
 

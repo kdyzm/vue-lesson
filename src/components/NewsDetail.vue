@@ -2,6 +2,7 @@
     <div>
         <h2>{{title}}</h2>
         {{$route.params.aid}}
+        {{$route.query.aid}}
     </div>
 </template>
 
@@ -14,7 +15,8 @@
             }
         },
         mounted() {
-            console.log(this.$route.params.aid)
+            console.log(this.$route.params.aid);
+            console.log(this.$route.query.aid);
         }
     }
 </script>

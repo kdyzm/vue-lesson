@@ -4,8 +4,8 @@
         {{receiveNews}}
         <ul>
             <li v-for="(item,key) in newsList">
-
-                <router-link :to="'/news/detail/'+item.id">{{item.msg}}</router-link>
+                path传值：<router-link :to="'/news/detail/'+item.id">{{item.msg}}</router-link><br/>
+                get传值：<router-link :to="'/news/detail?aid='+item.id">{{item.msg}}</router-link><br/>
             </li>
         </ul>
     </div>
