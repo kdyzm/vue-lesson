@@ -2,6 +2,7 @@
     <div id="app">
         <router-link to="/home">首页</router-link>
         <router-link to="/news">新闻</router-link>
+        <router-link to="/user">用户</router-link>
         <!-- 路由匹配到的组件将渲染在这里 -->
         <router-view></router-view>
     </div>
