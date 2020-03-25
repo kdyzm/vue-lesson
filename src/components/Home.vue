@@ -1,8 +1,13 @@
 <template>
     <div>
-        <v-header ref="header" :title="title"/><br/>
-        <button @click="getHeaderData()">获取子组件的数据和方法</button><br/><br/>
-        <button @click="emitNews()">给News组件传值</button><br/><br/>
+        <v-header ref="header" :title="title"/>
+        <br/>
+        <button @click="getHeaderData()">获取子组件的数据和方法</button>
+        <br/><br/>
+        <button @click="emitNews()">给News组件传值</button>
+        <br/><br/>
+        <button @click="jump2News()">通过js跳转到新闻页面</button>
+        <br/><br/>
         <button @click="getData()">请求数据</button>
         <ul>
             <li v-for="(item,key) in list.data" :key="key">
@@ -35,15 +40,20 @@
                     console.log(err);
                 })
             },
-            getHeaderData(){
+            getHeaderData() {
                 this.$refs.header.run();
             },
-            emitNews(){
-                VueEvent.$emit('to-news',this.title);
+            emitNews() {
+                VueEvent.$emit('to-news', this.title);
+            },
+            jump2News() {
+                //注意，这里的官方文档写错了
+                this.$router.push({path: "/news"});
+
             }
         },
-        components:{
-            'v-header':Header
+        components: {
+            'v-header': Header
         }
     }
 </script>
