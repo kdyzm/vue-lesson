@@ -15,6 +15,10 @@
             </li>
         </ul>
 
+        vuex测试：{{this.$store.state.count}}----
+        {{this.$store.getters.computed}}
+
+        <button @click="incCount()">增加vuex的数量</button>
     </div>
 </template>
 
@@ -22,6 +26,7 @@
 
     import Header from './common/Header';
     import VueEvent from './model/VueEvent';
+    import store from "../vuex/storage";
 
     export default {
         name: "Home",
@@ -50,11 +55,15 @@
                 //注意，这里的官方文档写错了
                 this.$router.push({path: "/news"});
 
+            },
+            incCount() {
+                this.$store.commit("incCount");
             }
         },
         components: {
             'v-header': Header
-        }
+        },
+        store
     }
 </script>
 
