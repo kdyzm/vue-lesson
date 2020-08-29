@@ -10,7 +10,6 @@
         name: "Header",
         data(){
             return {
-                title: "我是一个header组件"
             }
         },
         methods:{
